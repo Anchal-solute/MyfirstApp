@@ -24,7 +24,7 @@ namespace MyfirstApp
            
             services.AddControllers();
 
-            var sqlConnectionString = Configuration.GetConnectionString("PostgreSqlConnectionString");
+            var sqlConnectionString = Configuration["PostgreSqlConnectionString"];
 
             services.AddDbContext<PostgreSqlContext>(options => options.UseNpgsql(sqlConnectionString));
 
